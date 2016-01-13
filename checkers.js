@@ -47,3 +47,17 @@ function setUpRed() {
 			checkerboard[1][i] = player1;
 	}
 }
+
+
+function setUpBlack() {
+	var boardRows = checkerboard.length-1;
+	var boardCols = checkerboard[0].length-1;
+
+	for (var i = 0; i <= boardCols; i+=2) {
+			checkerboard[boardRows][i] = player2;
+			checkerboard[boardRows-=2][i] = player2;
+	}
+	for (var z = 1; z <= boardCols; z+=2) {
+			checkerboard[boardRows-=1][i] = player2;
+	}
+}
