@@ -21,3 +21,15 @@ var getPieceAt = function(row, col) {
   var pieceType = checkerboard[row][col];
   return pieceType;
 }
+
+function clearBoard() {
+	//set all spaces to null
+	var boardRows = checkerboard.length-1;
+	var boardCols = checkerboard[0].length-1;
+
+	for (var i = boardRows; i >= 0; i--) {
+		for (var z = boardCols; z >= 0; z--) {
+			checkerboard[i][z] = null;
+		}
+	}
+}
