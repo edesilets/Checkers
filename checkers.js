@@ -18,4 +18,6 @@ var setSquare = function(player, row, col) {
 
 var getPieceAt = function(row, col) {
   // Your Code Here
+  var pieceType = checkerboard[row][col];
+  return pieceType;
 }
