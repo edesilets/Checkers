@@ -44,20 +44,24 @@ function setUpRed() {
 			checkerboard[2][i] = player1;
 	}
 	for (var z = 1; z <= boardCols; z+=2) {
-			checkerboard[1][i] = player1;
+			checkerboard[1][z] = player1;
 	}
 }
-
 
 function setUpBlack() {
 	var boardRows = checkerboard.length-1;
 	var boardCols = checkerboard[0].length-1;
 
-	for (var i = 0; i <= boardCols; i+=2) {
-			checkerboard[boardRows][i] = player2;
-			checkerboard[boardRows-=2][i] = player2;
+	for (var i = 1; i <= boardCols; i+=2) {
+			checkerboard[5][i] = player2; //Replace first index with Var
+			checkerboard[7][i] = player2; //Replace first index with Var
 	}
-	for (var z = 1; z <= boardCols; z+=2) {
-			checkerboard[boardRows-=1][i] = player2;
+	for (var z = 0; z <= boardCols; z+=2) {
+    	checkerboard[6][z] = player2; //Replace first index with Var
 	}
 }
+
+var pieces = {
+				'red': [[0,0], [0,2], [0,4], [0,6], [1,1], [1,3], [1,5], [1,7], [2,0], [2,2], [2,4], [2,6]],
+				'black': [[5,1], [5,3], [5,5], [5,7], [6,0], [6,2], [6,4], [6,6], [7,1], [7,3], [7,5], [7,7]]
+	}
