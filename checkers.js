@@ -25,38 +25,35 @@ var getPieceAt = function(row, col) {
 
 function clearBoard() {
 	//set all spaces to null
-	var boardRows = checkerboard.length-1;
-	var boardCols = checkerboard[0].length-1;
+	var boardRows = checkerboard.length;
 
-	for (var i = boardRows; i >= 0; i--) {
-		for (var z = boardCols; z >= 0; z--) {
+	for (var i = 0; i < boardRows; i++) {
+		for (var z = 0; z < boardRows; z++) {
 			checkerboard[i][z] = null;
 		}
 	}
 }
 
 function setUpRed() {
-	var boardRows = checkerboard.length-1;
-	var boardCols = checkerboard[0].length-1;
+	var boardCols = checkerboard[0].length;
 
-	for (var i = 0; i <= boardCols; i+=2) {
+	for (var i = 0; i < boardCols; i+=2) {
 			checkerboard[0][i] = player1;
 			checkerboard[2][i] = player1;
 	}
-	for (var z = 1; z <= boardCols; z+=2) {
+	for (var z = 1; z < boardCols; z+=2) {
 			checkerboard[1][z] = player1;
 	}
 }
 
 function setUpBlack() {
-	var boardRows = checkerboard.length-1;
-	var boardCols = checkerboard[0].length-1;
+	var boardCols = checkerboard[0].length;
 
-	for (var i = 1; i <= boardCols; i+=2) {
+	for (var i = 1; i < boardCols; i+=2) {
 			checkerboard[5][i] = player2; //Replace first index with Var
 			checkerboard[7][i] = player2; //Replace first index with Var
 	}
-	for (var z = 0; z <= boardCols; z+=2) {
+	for (var z = 0; z < boardCols; z+=2) {
     	checkerboard[6][z] = player2; //Replace first index with Var
 	}
 }
